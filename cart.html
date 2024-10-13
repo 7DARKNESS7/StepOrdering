@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Cart | StepOrdering</title>
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/2.6.0/uicons-solid-straight/css/uicons-solid-straight.css'>
+    <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/2.6.0/uicons-solid-straight/css/uicons-solid-straight.css'>
+    <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/2.6.0/uicons-regular-straight/css/uicons-regular-straight.css'>
+    <link rel="icon" href="./images/moped.png" type="image/png">
+</head>
+<body>
+    <nav id="navbarScroll">
+        <a href="./index.html">
+            <div class="logo">
+                <img src="./images/logo.png" alt="">
+            </div>
+        </a>
+        <ul>
+            <li><a href="./index.html" class="customHover">Home</a></li>
+            <li><a href="#" class="cartIco"><span>Cart</span><i class="fi fi-ss-moped"></i></a></li>
+        </ul>
+    </nav>
+    <main>
+        <section class="topSect">
+            <div class="darkOverlay"></div>
+            <h1>My Cart</h1>
+        </section>
+        <div class="address">
+            <p><a href="./index.html">Home</a><span>/</span><span class="addressCard">Cart</span></p>
+        </div>
+        <section class="cart">
+            <h1>Cart</h1>
+            <div class="cartProducts">
+                <div class="cartInfo">
+                    <div>
+                        <p>Product</p>
+                    </div>
+                    <div>
+                        <p>Qty</p>
+                        <p>Price</p>
+                        <p>Total</p>
+                    </div>
+                </div>
+                <div class="cartProd" id="cartProd">
+
+                </div>
+                <div class="cartBottom">
+                    <span>Total :</span>
+                    <button class="proceed hvr-ripple-out">PROCEED TO CHECKOUT</button>
+                </div>
+            </div>
+        </section>
+    </main>
+    <script src="./js/app.js"></script>
+</body>
+</html>

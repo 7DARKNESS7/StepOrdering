@@ -233,21 +233,88 @@ body {
                     justify-content: center;
                     align-items: center;
                     width: 100%;
-                    gap: 45px;
+                    gap: 25px;
+                
                     div.rangeBox {
                         display: flex;
                         flex-direction: column;
-                        gap: 5px;
-                        input {}
-                        
+                        align-items: center;
+                        gap: 10px;
+                        width: 100%;
+                        label {
+                            font-size: 16px;
+                            color: #333;
+                        }
+                        input[type="range"] {
+                            -webkit-appearance: none;
+                            appearance: none;
+                            width: 100%;
+                            height: 12px;
+                            background: $primary; 
+                            border-radius: 5px;
+                            outline: none;
+                            cursor: pointer;
+                            &::-webkit-slider-thumb {
+                                -webkit-appearance: none;
+                                appearance: none;
+                                width: 25px;
+                                height: 25px;
+                                background: $fourth;
+                                border: 1px solid $primary; 
+                                border-radius: 50%;
+                                cursor: pointer;
+                            }
+                            &::-moz-range-thumb {
+                                width: 20px;
+                                height: 20px;
+                                background: $fourth; 
+                                border: 2px solid $primary; 
+                                border-radius: 50%;
+                                cursor: pointer;
+                            }
+                            &:hover {
+                                opacity: 1;
+                            }
+                        }
                     }
                     div.checkBoxes {
                         display: flex;
                         flex-direction: column;
+                        align-items: flex-start;
                         gap: 20px;
+                        width: 100%;
                         div {
                             display: flex;
                             gap: 10px;
+                            align-items: center;
+                            input[type="checkbox"] {
+                                -webkit-appearance: none;
+                                appearance: none;
+                                width: 20px;
+                                height: 20px;
+                                border: 2px solid #8D8A73;
+                                background-color: $fourth;
+                                cursor: pointer;
+                                position: relative;
+                                &:checked {
+                                    background-color: $primary; 
+                                    border-color: $primary;
+                                }
+                                &:checked::after {
+                                    content: '';
+                                    position: absolute;
+                                    top: 50%;
+                                    left: 50%;
+                                    transform: translate(-50%, -50%);
+                                    width: 10px;
+                                    height: 10px;
+                                    background-color: $fourth; 
+                                }
+                            }
+                            label {
+                                font-size: 16px;
+                                color: #333;
+                            }
                         }
                     }
                     button.filterReset {
@@ -257,15 +324,16 @@ body {
                         background-color: $primary;
                         transition: 0.6s ease;
                         border-radius: 5px;
-                        color: $fourth;
+                        color: white;
                         font-weight: bold;
                         font-size: 16px;
                         cursor: pointer;
                         &:hover {
-                            background-color: $third;
+                            background-color: $third; 
                         }
                     }
-                }
+                }                
+                
                 button.filterApply {
                     width: 100%;
                     height: 45px;
@@ -371,6 +439,174 @@ body {
                     &:hover {
                         box-shadow: 10px 10px 10px #a7a7a7;
                     }
+                }
+            }
+        }
+        div.address {
+            width: 100%;
+            background-color: $primary;
+            height: 45px;
+            display: flex;
+            align-items: center;
+            padding: 0 10%;
+            position: relative;
+            p {
+                color: $fourth;
+                font-size: 14px;
+                font-weight: bold;
+                display: flex;
+                align-items: center;
+                gap: 20px;
+                a {
+                    text-decoration: none;
+                    color: $fourth;
+                    font-weight: bold;
+                }
+                span {
+                    font-weight: bold;
+                }
+                .addressCard {
+                    color: $third;
+                    font-weight: bold;
+                }
+            }
+            &::before {
+                position: absolute;
+                content: "";
+                top: -4px;
+                left: 0;
+                border-bottom: 8px solid $fourth;
+                border-image: url('../images/copyright_border.png') 25 stretch;
+                width: 100%;
+                z-index: 100;
+            }
+            &::after {
+                position: absolute;
+                content: "";
+                bottom: -3px;
+                left: 0;
+                border-bottom: 8px solid $fourth;
+                border-image: url('../images/copyright_border.png') 25 stretch;
+                width: 100%;
+                z-index: 100;
+            }
+        }
+        section.cart {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-top: 50px;
+            h1 {
+                font-size: 36px;
+                font-family: cursive;
+            }
+            .cartProducts {
+                width: 100%;
+                padding: 0 10%;
+                display: flex;
+                flex-direction: column;
+                .cartInfo {
+                    position: relative;
+                    display: flex;
+                    align-items: center;
+                    justify-content: space-between;
+                    width: 100%;
+                    gap: 20px;
+                    margin-top: 30px;
+                    padding: 0 50px;
+                    div {
+                        display: flex;
+                        align-items: center;
+                        justify-content: space-between;
+                        max-width: 300px;
+                        width: 100%;
+                        p {
+                            font-weight: bold;
+                        }
+                    }
+                    &::after {
+                        position: absolute;
+                        content: "";
+                        bottom: -25px;
+                        left: 50%;
+                        transform: translateX(-50%);
+                        width: 100%;
+                        border-bottom: 8px solid $fourth;
+                        border-image: url('../images/copyright_border.png') 25 stretch;
+                    }
+                }
+                .cartBottom {
+                    display: flex;
+                    flex-direction: column;
+                    align-items: flex-end;
+                    justify-content: center;
+                    margin-top: 30px;
+                    gap: 20px;
+                    span {
+                        font-size: 24px;
+                    }
+                    button.proceed {
+                        max-width: 230px;
+                        width: 100%;
+                        height: 45px;
+                        border: 0;
+                        background-color: $primary;
+                        transition: 0.6s ease;
+                        color: white;
+                        font-weight: bold;
+                        font-size: 14px;
+                        color: $secondary;
+                        cursor: pointer;
+                        &:hover {
+                            background-color: $third;
+                            border-radius: 3px;
+                        }
+                    }
+                    @-webkit-keyframes hvr-ripple-out {
+                        100% {
+                            top: -8px;
+                            right: -8px;
+                            bottom: -8px;
+                            left: -8px;
+                            opacity: 0;
+                       }
+                   }
+                    @keyframes hvr-ripple-out {
+                        100% {
+                            top: -8px;
+                            right: -8px;
+                            bottom: -8px;
+                            left: -8px;
+                            opacity: 0;
+                       }
+                   }
+                    .hvr-ripple-out {
+                        display: inline-block;
+                        vertical-align: middle;
+                        -webkit-transform: perspective(1px) translateZ(0);
+                        transform: perspective(1px) translateZ(0);
+                        box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+                        position: relative;
+                   }
+                    .hvr-ripple-out:before {
+                        content: '';
+                        position: absolute;
+                        border: #e81c0c solid 6px;
+                        top: 0;
+                        right: 0;
+                        bottom: 0;
+                        left: 0;
+                        
+                        -webkit-animation: 1s infinite;
+                        animation: 1s infinite;
+                        transition: all 0.5s ease;
+                   }
+                    .hvr-ripple-out:hover:before, .hvr-ripple-out:focus:before, .hvr-ripple-out:active:before {
+                        -webkit-animation-name: hvr-ripple-out;
+                        animation-name: hvr-ripple-out;
+                        border: #ffcc01 solid 6px;
+                   }
                 }
             }
         }
