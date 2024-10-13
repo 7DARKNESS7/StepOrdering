@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>StepOrdering</title>
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/2.6.0/uicons-solid-straight/css/uicons-solid-straight.css'>
+    <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/2.6.0/uicons-solid-straight/css/uicons-solid-straight.css'>
+    <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/2.6.0/uicons-regular-straight/css/uicons-regular-straight.css'>
+    <link rel="icon" href="./images/moped.png" type="image/png">
+</head>
+<body>
+    <nav id="navbarScroll">
+        <a href="./index.html">
+            <div class="logo">
+                <img src="./images/logo.png" alt="">
+            </div>
+        </a>
+        <ul>
+            <li><a href="./index.html" class="customHover">Home</a></li>
+            <li><a href="#" class="cartIco"><span>Cart</span><i class="fi fi-ss-moped"></i></a></li>
+        </ul>
+    </nav>
+    <main>
+        <section class="topSect">
+            <div class="darkOverlay"></div>
+            <h1>Fast and efficient, online ordering you must try.</h1>
+        </section>
+        <section class="categories">
+            <h1>Categories</h1>
+            <div class="categoriesList" id="categories">
+                <span>All</span>
+            </div>
+        </section>
+        <section class="mainContent">
+            <div class="filter">
+                <div class="filterTop">
+                    <p>Filter</p>
+                    <i class="fi fi-ss-filter"></i>
+                </div>
+                <div class="filterMid">
+                    <div class="rangeBox">
+                        <label for="spiciness">Spiciness:</label>
+                        <input type="range" id="spiciness">
+                    </div>
+                    <div class="checkBoxes">
+                        <div>
+                            <input type="checkbox" id="nuts">
+                            <label for="nuts">No Nuts</label>
+                        </div>
+                        <div>
+                            <input type="checkbox" id="veg">
+                            <label for="veg">Vegeterian only</label>
+                        </div>
+                    </div>
+                    <button class="filterReset">RESET</button>
+                </div>
+                <button class="filterApply">APPLY FILTER</button>
+            </div>
+            <div class="productCards" id="productCards">
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>© Step Ordering 2024, All rights reserved</p>
+    </footer>
+    <script src="./js/app.js"></script>
+</body>
+</html>

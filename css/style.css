@@ -1,0 +1,391 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: sans-serif;
+  position: relative;
+}
+body nav {
+  width: 100%;
+  position: fixed;
+  top: 0;
+  transition: 0.3s ease;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 100;
+  padding: 15px 8%;
+}
+body nav ul {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  gap: 50px;
+}
+body nav ul li a {
+  text-decoration: none;
+  color: #000000;
+  color: #ffffff;
+  font-weight: bold;
+}
+body nav ul li .customHover {
+  position: relative;
+  display: inline-block;
+}
+body nav ul li .customHover::before {
+  content: "";
+  position: absolute;
+  bottom: -3px;
+  left: -15px;
+  height: 3px;
+  background-color: #FFCC00;
+  width: 0;
+  transition: width 1s ease;
+  border-radius: 3px;
+}
+body nav ul li .customHover::after {
+  content: "";
+  position: absolute;
+  right: -38px;
+  bottom: -25px;
+  width: 50px;
+  height: 50px;
+  background-image: url("../images/cheesy-pizza.png");
+  background-size: cover;
+  background-position: center;
+  opacity: 0;
+  transform: translateY(25px);
+  transition: opacity 1s ease, transform 1s ease;
+}
+body nav ul li .customHover:hover::before {
+  width: 125%;
+}
+body nav ul li .customHover:hover::after {
+  opacity: 1;
+  transform: translateY(0);
+}
+body nav ul li .cartIco {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+body nav ul li .cartIco i {
+  color: #ffffff;
+  font-size: 30px;
+  width: 30px;
+  height: 30px;
+  transition: 1.7s;
+}
+body nav ul li .cartIco span {
+  padding: 5px 10px;
+  background-color: #E60000;
+  border-radius: 4px;
+  position: relative;
+}
+body nav ul li .cartIco span::after {
+  content: "";
+  position: absolute;
+  right: -8px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 0;
+  height: 0;
+  border-top: 6px solid transparent;
+  border-bottom: 6px solid transparent;
+  border-left: 8px solid #E60000;
+}
+body nav ul li .cartIco:hover i {
+  transform: translateX(25px);
+}
+body .navScrolled {
+  background: rgba(0, 0, 0, 0.7);
+}
+body .navScrolled::before {
+  position: absolute;
+  content: "";
+  bottom: -3px;
+  left: 0;
+  width: 100%;
+  border-top: 8px solid #ffffff;
+  -o-border-image: url("../images/copyright_border.png") 25 stretch;
+     border-image: url("../images/copyright_border.png") 25 stretch;
+}
+body main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+body main section.topSect {
+  width: 100%;
+  height: 450px;
+  background-image: url("../images/salad.jpg");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+body main section.topSect h1 {
+  color: #ffffff;
+  z-index: 10;
+  font-size: 30px;
+  font-family: cursive;
+}
+body main section.topSect .darkOverlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 2;
+  background-color: rgba(0, 0, 0, 0.7);
+}
+body main section.categories {
+  width: 100%;
+  height: 200px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  gap: 50px;
+  padding: 30px 30px 0 30px;
+}
+body main section.categories h1 {
+  font-family: cursive;
+  font-size: 36px;
+}
+body main section.categories .categoriesList {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  flex-wrap: wrap;
+}
+body main section.categories .categoriesList span {
+  color: #000000;
+  font-size: 20px;
+  transition: 0.4s ease;
+  border-top: 2px solid transparent;
+  border-left: 2px solid transparent;
+  border-right: 2px solid transparent;
+  padding: 15px 15px;
+  border-radius: 10px 10px 0 0;
+  cursor: pointer;
+}
+body main section.categories .categoriesList span:hover {
+  border-top: 2px solid #E60000;
+  border-left: 2px solid #E60000;
+  border-right: 2px solid #E60000;
+  background-color: #E60000;
+  color: #ffffff;
+  border-radius: 10px 10px 0 0;
+}
+body main section.categories .categoriesList::after {
+  position: absolute;
+  content: "";
+  bottom: -1px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%;
+  border-bottom: 8px solid #ffffff;
+  -o-border-image: url("../images/copyright_border.png") 25 stretch;
+     border-image: url("../images/copyright_border.png") 25 stretch;
+}
+body main section.mainContent {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-top: 30px;
+  max-width: 1200px;
+  width: 100%;
+  padding: 0 10px;
+  gap: 30px;
+}
+body main section.mainContent .filter {
+  max-width: 260px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  border: 1px solid #CFCFCF;
+  padding: 20px;
+  border-radius: 10px;
+  gap: 30px;
+}
+body main section.mainContent .filter .filterTop {
+  display: flex;
+  justify-content: space-between;
+}
+body main section.mainContent .filter .filterMid {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  gap: 45px;
+}
+body main section.mainContent .filter .filterMid div.rangeBox {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+body main section.mainContent .filter .filterMid div.checkBoxes {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+body main section.mainContent .filter .filterMid div.checkBoxes div {
+  display: flex;
+  gap: 10px;
+}
+body main section.mainContent .filter .filterMid button.filterReset {
+  width: 100%;
+  height: 45px;
+  border: 0;
+  background-color: #E60000;
+  transition: 0.6s ease;
+  border-radius: 5px;
+  color: #ffffff;
+  font-weight: bold;
+  font-size: 16px;
+  cursor: pointer;
+}
+body main section.mainContent .filter .filterMid button.filterReset:hover {
+  background-color: #FFCC00;
+}
+body main section.mainContent .filter button.filterApply {
+  width: 100%;
+  height: 45px;
+  border: 0;
+  background-color: #E60000;
+  transition: 0.6s ease;
+  border-radius: 5px;
+  color: #ffffff;
+  font-weight: bold;
+  font-size: 16px;
+  cursor: pointer;
+  margin-top: 20px;
+}
+body main section.mainContent .filter button.filterApply:hover {
+  background-color: #FFCC00;
+}
+body main section.mainContent .productCards {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 25px;
+  width: 100%;
+}
+body main section.mainContent .productCards .pCard {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  max-width: 280px;
+  width: 100%;
+  border-radius: 10px;
+  border: 2px solid #CFCFCF;
+  transition: 0.5s ease;
+}
+body main section.mainContent .productCards .pCard img {
+  max-width: 280px;
+  width: 100%;
+  background-color: #CFCFCF;
+  border-radius: 7px 7px 0 0;
+}
+body main section.mainContent .productCards .pCard .cardInfo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  padding: 0 20px;
+  width: 100%;
+  font-family: cursive !important;
+}
+body main section.mainContent .productCards .pCard .cardInfo p {
+  font-size: 14px;
+}
+body main section.mainContent .productCards .pCard .cardInfo .addIngr {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 25px;
+}
+body main section.mainContent .productCards .pCard .cardInfo .addIngr p {
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+  gap: 7px;
+}
+body main section.mainContent .productCards .pCard .cardInfo .addIngr p i {
+  font-size: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+body main section.mainContent .productCards .pCard .cardInfo .addIngr p i.fi-rs-check-circle {
+  color: #E60000;
+}
+body main section.mainContent .productCards .pCard .cardInfo .bottomInfo {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+body main section.mainContent .productCards .pCard .cardInfo .bottomInfo p {
+  font-size: 18px;
+  font-weight: bold;
+}
+body main section.mainContent .productCards .pCard .cardInfo .bottomInfo button {
+  padding: 4px 8px;
+  font-size: 15px;
+  border: 0;
+  background: url("../images/bt_border.png");
+  transition: all 0.5s ease;
+  cursor: pointer;
+  max-width: 108px;
+  width: 100%;
+  height: 42px;
+  font-weight: bold;
+  color: #000000;
+  font-family: cursive;
+}
+body main section.mainContent .productCards .pCard .cardInfo .bottomInfo button:hover {
+  background: url("../images/bt_hoverborder.png");
+  color: #E60000;
+}
+body main section.mainContent .productCards .pCard:hover {
+  box-shadow: 10px 10px 10px #a7a7a7;
+}
+body footer {
+  width: 100%;
+  height: 60px;
+  background-color: #E60000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 30px;
+  position: relative;
+}
+body footer p {
+  color: #ffffff;
+  font-size: 14px;
+}
+body footer::before {
+  position: absolute;
+  content: "";
+  top: -4px;
+  left: 0;
+  width: 100%;
+  border-top: 8px solid #ffffff;
+  -o-border-image: url("../images/copyright_border.png") 25 stretch;
+     border-image: url("../images/copyright_border.png") 25 stretch;
+}/*# sourceMappingURL=style.css.map */
