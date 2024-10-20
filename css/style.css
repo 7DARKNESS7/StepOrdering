@@ -8,6 +8,33 @@ body {
   font-family: sans-serif;
   position: relative;
 }
+body .errorBox {
+  max-width: 300px;
+  width: 100%;
+  background-color: #e60000;
+  color: #ffffff;
+  height: 50px;
+  position: fixed;
+  top: 30px;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  z-index: 9999;
+  border-radius: 10px;
+  transition: transform 1s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+  transform: translateY(-100px);
+  opacity: 0;
+}
+body .errorBox i {
+  font-size: 24px;
+}
+body .errorBox span {
+  font-size: 18px;
+}
 body nav {
   width: 100%;
   position: fixed;
@@ -16,7 +43,7 @@ body nav {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  z-index: 100;
+  z-index: 1000;
   padding: 15px 8%;
 }
 body nav ul {
@@ -41,7 +68,7 @@ body nav ul li .customHover::before {
   bottom: -3px;
   left: -15px;
   height: 3px;
-  background-color: #FFCC00;
+  background-color: #ffcc00;
   width: 0;
   transition: width 1s ease;
   border-radius: 3px;
@@ -82,7 +109,7 @@ body nav ul li .cartIco i {
 }
 body nav ul li .cartIco span {
   padding: 5px 10px;
-  background-color: #E60000;
+  background-color: #e60000;
   border-radius: 4px;
   position: relative;
 }
@@ -96,7 +123,7 @@ body nav ul li .cartIco span::after {
   height: 0;
   border-top: 6px solid transparent;
   border-bottom: 6px solid transparent;
-  border-left: 8px solid #E60000;
+  border-left: 8px solid #e60000;
 }
 body nav ul li .cartIco:hover i {
   transform: translateX(25px);
@@ -180,10 +207,10 @@ body main section.categories .categoriesList span {
   cursor: pointer;
 }
 body main section.categories .categoriesList span:hover {
-  border-top: 2px solid #E60000;
-  border-left: 2px solid #E60000;
-  border-right: 2px solid #E60000;
-  background-color: #E60000;
+  border-top: 2px solid #e60000;
+  border-left: 2px solid #e60000;
+  border-right: 2px solid #e60000;
+  background-color: #e60000;
   color: #ffffff;
   border-radius: 10px 10px 0 0;
 }
@@ -213,7 +240,7 @@ body main section.mainContent .filter {
   width: 100%;
   display: flex;
   flex-direction: column;
-  border: 1px solid #CFCFCF;
+  border: 1px solid #cfcfcf;
   padding: 20px;
   border-radius: 10px;
   gap: 30px;
@@ -247,7 +274,7 @@ body main section.mainContent .filter .filterMid div.rangeBox input[type=range] 
        appearance: none;
   width: 100%;
   height: 12px;
-  background: #E60000;
+  background: #e60000;
   border-radius: 5px;
   outline: none;
   cursor: pointer;
@@ -258,7 +285,7 @@ body main section.mainContent .filter .filterMid div.rangeBox input[type=range]:
   width: 25px;
   height: 25px;
   background: #ffffff;
-  border: 1px solid #E60000;
+  border: 1px solid #e60000;
   border-radius: 50%;
   cursor: pointer;
 }
@@ -266,7 +293,7 @@ body main section.mainContent .filter .filterMid div.rangeBox input[type=range]:
   width: 20px;
   height: 20px;
   background: #ffffff;
-  border: 2px solid #E60000;
+  border: 2px solid #e60000;
   border-radius: 50%;
   cursor: pointer;
 }
@@ -291,14 +318,14 @@ body main section.mainContent .filter .filterMid div.checkBoxes div input[type=c
        appearance: none;
   width: 20px;
   height: 20px;
-  border: 2px solid #8D8A73;
+  border: 2px solid #8d8a73;
   background-color: #ffffff;
   cursor: pointer;
   position: relative;
 }
 body main section.mainContent .filter .filterMid div.checkBoxes div input[type=checkbox]:checked {
-  background-color: #E60000;
-  border-color: #E60000;
+  background-color: #e60000;
+  border-color: #e60000;
 }
 body main section.mainContent .filter .filterMid div.checkBoxes div input[type=checkbox]:checked::after {
   content: "";
@@ -318,7 +345,7 @@ body main section.mainContent .filter .filterMid button.filterReset {
   width: 100%;
   height: 45px;
   border: 0;
-  background-color: #E60000;
+  background-color: #e60000;
   transition: 0.6s ease;
   border-radius: 5px;
   color: white;
@@ -327,13 +354,13 @@ body main section.mainContent .filter .filterMid button.filterReset {
   cursor: pointer;
 }
 body main section.mainContent .filter .filterMid button.filterReset:hover {
-  background-color: #FFCC00;
+  background-color: #ffcc00;
 }
 body main section.mainContent .filter button.filterApply {
   width: 100%;
   height: 45px;
   border: 0;
-  background-color: #E60000;
+  background-color: #e60000;
   transition: 0.6s ease;
   border-radius: 5px;
   color: #ffffff;
@@ -343,12 +370,12 @@ body main section.mainContent .filter button.filterApply {
   margin-top: 20px;
 }
 body main section.mainContent .filter button.filterApply:hover {
-  background-color: #FFCC00;
+  background-color: #ffcc00;
 }
 body main section.mainContent .productCards {
   display: flex;
   flex-wrap: wrap;
-  justify-content: center;
+  justify-content: flex-start;
   gap: 25px;
   width: 100%;
 }
@@ -360,13 +387,13 @@ body main section.mainContent .productCards .pCard {
   max-width: 280px;
   width: 100%;
   border-radius: 10px;
-  border: 2px solid #CFCFCF;
+  border: 2px solid #cfcfcf;
   transition: 0.5s ease;
 }
 body main section.mainContent .productCards .pCard img {
   max-width: 280px;
   width: 100%;
-  background-color: #CFCFCF;
+  background-color: #cfcfcf;
   border-radius: 7px 7px 0 0;
 }
 body main section.mainContent .productCards .pCard .cardInfo {
@@ -400,7 +427,7 @@ body main section.mainContent .productCards .pCard .cardInfo .addIngr p i {
   justify-content: center;
 }
 body main section.mainContent .productCards .pCard .cardInfo .addIngr p i.fi-rs-check-circle {
-  color: #E60000;
+  color: #e60000;
 }
 body main section.mainContent .productCards .pCard .cardInfo .bottomInfo {
   width: 100%;
@@ -430,14 +457,14 @@ body main section.mainContent .productCards .pCard .cardInfo .bottomInfo button 
 }
 body main section.mainContent .productCards .pCard .cardInfo .bottomInfo button:hover {
   background: url("../images/bt_hoverborder.png");
-  color: #E60000;
+  color: #e60000;
 }
 body main section.mainContent .productCards .pCard:hover {
   box-shadow: 10px 10px 10px #a7a7a7;
 }
 body main div.address {
   width: 100%;
-  background-color: #E60000;
+  background-color: #e60000;
   height: 45px;
   display: flex;
   align-items: center;
@@ -461,7 +488,7 @@ body main div.address p span {
   font-weight: bold;
 }
 body main div.address p .addressCard {
-  color: #FFCC00;
+  color: #ffcc00;
   font-weight: bold;
 }
 body main div.address::before {
@@ -539,10 +566,12 @@ body main section.cart .cartProducts .cartBottom {
   flex-direction: column;
   align-items: flex-end;
   justify-content: center;
-  margin-top: 30px;
+  margin-top: 50px;
+  margin-bottom: 50px;
   gap: 20px;
 }
-body main section.cart .cartProducts .cartBottom span {
+body main section.cart .cartProducts .cartBottom #generalTotal {
+  font-weight: bold;
   font-size: 24px;
 }
 body main section.cart .cartProducts .cartBottom button.proceed {
@@ -550,7 +579,7 @@ body main section.cart .cartProducts .cartBottom button.proceed {
   width: 100%;
   height: 45px;
   border: 0;
-  background-color: #E60000;
+  background-color: #e60000;
   transition: 0.6s ease;
   color: white;
   font-weight: bold;
@@ -559,7 +588,7 @@ body main section.cart .cartProducts .cartBottom button.proceed {
   cursor: pointer;
 }
 body main section.cart .cartProducts .cartBottom button.proceed:hover {
-  background-color: #FFCC00;
+  background-color: #ffcc00;
   border-radius: 3px;
 }
 @keyframes hvr-ripple-out {
@@ -589,14 +618,108 @@ body main section.cart .cartProducts .cartBottom .hvr-ripple-out:before {
   animation: 1s infinite;
   transition: all 0.5s ease;
 }
-body main section.cart .cartProducts .cartBottom .hvr-ripple-out:hover:before, body main section.cart .cartProducts .cartBottom .hvr-ripple-out:focus:before, body main section.cart .cartProducts .cartBottom .hvr-ripple-out:active:before {
+body main section.cart .cartProducts .cartBottom .hvr-ripple-out:hover:before,
+body main section.cart .cartProducts .cartBottom .hvr-ripple-out:focus:before,
+body main section.cart .cartProducts .cartBottom .hvr-ripple-out:active:before {
   animation-name: hvr-ripple-out;
   border: #ffcc01 solid 6px;
+}
+body main section.cart .cartProd {
+  margin-top: 50px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 50px;
+  font-family: cursive !important;
+}
+body main section.cart .cartProd .cart-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+  padding-right: 40px;
+}
+body main section.cart .cartProd .cart-item div.name-image {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+body main section.cart .cartProd .cart-item div.name-image i {
+  font-size: 24px;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+body main section.cart .cartProd .cart-item div.name-image i:hover {
+  color: #e60000;
+}
+body main section.cart .cartProd .cart-item div.name-image .fi-sc-pencil {
+  font-size: 18px;
+}
+body main section.cart .cartProd .cart-item div.name-image img {
+  width: 120px;
+  height: 120px;
+}
+body main section.cart .cartProd .cart-item div.name-image span {
+  font-weight: bold;
+}
+body main section.cart .cartProd .cart-item div.name-image .deleteIcon {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 10px;
+}
+body main section.cart .cartProd .cart-item div.name-image .imgName {
+  display: flex;
+  gap: 20px;
+}
+body main section.cart .cartProd .cart-item div.qty {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 350px;
+}
+body main section.cart .cartProd .cart-item div.qty div {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+  border: 1px solid #ababab;
+  padding: 2px;
+}
+body main section.cart .cartProd .cart-item div.qty div i.qtyBtn {
+  cursor: pointer;
+  border-radius: 50%;
+  width: 20px;
+  height: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #ababab;
+  font-size: 18px;
+  transition: 0.3s ease;
+}
+body main section.cart .cartProd .cart-item div.qty div i.qtyBtn:hover {
+  color: #7a7a7a;
+}
+body main section.cart .cartProd .cart-item div.qty div span {
+  font-weight: bold;
+}
+body main section.cart .cartProd .cart-item div.qty span {
+  font-weight: bold;
+}
+body main section.cart .cartProd .cart-item::after {
+  position: absolute;
+  content: "";
+  bottom: -20px;
+  width: 100%;
+  border-bottom: 8px solid #ffffff;
+  -o-border-image: url("../images/copyright_border.png") 25 stretch;
+     border-image: url("../images/copyright_border.png") 25 stretch;
 }
 body footer {
   width: 100%;
   height: 60px;
-  background-color: #E60000;
+  background-color: #e60000;
   display: flex;
   justify-content: center;
   align-items: center;
