@@ -10,8 +10,10 @@ let spicinessRange = document.getElementById("spicinessRange");
 let spicinessValue = document.getElementById("spicinessValue");
 let filterReset = document.getElementById("filterReset");
 let filterApply = document.getElementById("filterApply");
-let filterResult = document.getElementById("filterResult");
+let filterErrorResult = document.getElementById("filterErrorResult");
+let filterSuccessResult = document.getElementById("filterSuccessResult");
 let errorBox = document.getElementById("errorBox");
+let successBox = document.getElementById("successBox");
 
 async function getProducts() {
   let productList = await fetch(
@@ -20,7 +22,6 @@ async function getProducts() {
   return productList.json();
 }
 getProducts().then((data) => {
-  console.log(data);
   showCards(data);
 });
 
@@ -61,7 +62,6 @@ function showCards(items) {
 fetch("https://restaurant.stepprojects.ge/api/Categories/GetAll")
   .then((response) => response.json())
   .then((data) => {
-    console.log(data);
     showCategories(data);
   });
 
@@ -114,8 +114,22 @@ function addToCart(price, id) {
         productId: id,
       }),
     })
-      .then(() => showBasket(cartItems))
-      .catch((error) => console.error("Error updating cart:", error));
+      .then(() => {
+        successBox.style.opacity = 1;
+        successBox.style.transform = "translateY(30px)";
+        filterSuccessResult.innerText = "Cart Updated!";
+        setTimeout(() => {
+          successBox.style.transform = "translateY(-100px)";
+        }, 1500);
+      })
+      .catch((error) => {
+        errorBox.style.opacity = 1;
+        errorBox.style.transform = "translateY(30px)";
+        filterErrorResult.innerText = "Error Updating Cart!";
+        setTimeout(() => {
+          errorBox.style.transform = "translateY(-100px)";
+        }, 1500);
+      });
   } else {
     let newItem = { productId: id, quantity: 1, price: price };
     cartItems.push(newItem);
@@ -128,8 +142,22 @@ function addToCart(price, id) {
       },
       body: JSON.stringify(newItem),
     })
-      .then(() => showBasket(cartItems))
-      .catch((error) => console.error("Error adding to cart:", error));
+      .then(() => {
+        successBox.style.opacity = 1;
+        successBox.style.transform = "translateY(30px)";
+        filterSuccessResult.innerText = "Item Added To Cart!";
+        setTimeout(() => {
+          successBox.style.transform = "translateY(-100px)";
+        }, 1500);
+      })
+      .catch((error) => {
+        errorBox.style.opacity = 1;
+        errorBox.style.transform = "translateY(30px)";
+        filterErrorResult.innerText = "Error Adding To Cart!";
+        setTimeout(() => {
+          errorBox.style.transform = "translateY(-100px)";
+        }, 1500);
+      });
   }
 }
 
@@ -143,6 +171,8 @@ filterApply.addEventListener("click", function (e) {
     : (spiciness = "");
   nuts.checked ? (nuts.value = true) : "";
   vegan.checked ? (vegan.value = true) : "";
+  !nuts.checked ? (nuts.value = "") : (nuts.value = true);
+  !vegan.checked ? (vegan.value = "") : (vegan.value = true);
 
   fetch(
     `https://restaurant.stepprojects.ge/api/Products/GetFiltered?vegeterian=${vegan.value}&nuts=${nuts.value}&spiciness=${spiciness}`
@@ -154,14 +184,14 @@ filterApply.addEventListener("click", function (e) {
           showCards(data);
         } else {
           errorBox.style.opacity = 1;
-          errorBox.style.transform = "translateY(50px)";
+          errorBox.style.transform = "translateY(30px)";
 
           setTimeout(() => {
             errorBox.style.transform = "translateY(-100px)";
           }, 1500);
         }
       }
-      filterResult.innerText = "No Product Found!";
+      filterErrorResult.innerText = "No Product Found!";
     });
 });
 
