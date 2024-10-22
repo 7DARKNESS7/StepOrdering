@@ -45,8 +45,8 @@ function showBasket(list) {
             <span>${item.quantity}</span>
             <i class="fi fi-ss-minus-circle qtyBtn" onclick="quantityDecrease(${item.price}, ${item.quantity}, ${item.product.id})"></i>
           </div>
-          <span>$ ${item.price}</span>
-          <span class="item-total">$ ${fullPrice}</span>
+          <span>$${item.price}</span>
+          <span class="item-total">$${fullPrice}</span>
         </div>
       </div>
     `;
