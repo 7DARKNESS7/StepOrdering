@@ -948,6 +948,9 @@ body footer::before {
   }
 }
 @media screen and (max-width: 425px) {
+  body main section.topSect h1 {
+    font-size: 20px;
+  }
   body main section.cart .cartProd .cart-item .name-image .imgName img {
     width: 80px;
     height: 80px;

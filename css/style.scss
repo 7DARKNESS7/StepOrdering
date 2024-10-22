@@ -1044,6 +1044,11 @@ body {
 @media screen and (max-width: 425px) {
   body {
     main {
+      section.topSect {
+        h1 {
+          font-size: 20px;
+        }
+      }
       section.cart {
         .cartProd {
           .cart-item {
