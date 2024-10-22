@@ -222,3 +222,11 @@ window.onscroll = function () {
     navbar.classList.remove("navScrolled");
   }
 };
+
+let burgerBtn = document.getElementById("burgerBtn");
+let burgerMenu = document.getElementById("burgerMenu");
+
+burgerBtn.addEventListener("click", function () {
+  burgerMenu.classList.toggle("hidden");
+  burgerBtn.classList.toggle("burgerToggle");
+});
