@@ -204,7 +204,6 @@ body {
         color: $fourth;
         z-index: 10;
         font-size: 30px;
-        font-family: cursive;
       }
       .darkOverlay {
         position: absolute;
@@ -226,7 +225,6 @@ body {
       gap: 50px;
       padding: 30px 30px 0 30px;
       h1 {
-        font-family: cursive;
         font-size: 36px;
       }
       .categoriesList {
@@ -441,7 +439,6 @@ body {
             gap: 20px;
             padding: 0 20px;
             width: 100%;
-            font-family: cursive !important;
             p {
               font-size: 14px;
             }
@@ -489,7 +486,6 @@ body {
                 height: 42px;
                 font-weight: bold;
                 color: $secondary;
-                font-family: cursive;
                 &:hover {
                   background: url("../images/bt_hoverborder.png");
                   color: $primary;
@@ -560,7 +556,6 @@ body {
       margin-top: 50px;
       h1 {
         font-size: 36px;
-        font-family: cursive;
       }
       .cartProducts {
         width: 100%;
@@ -680,7 +675,6 @@ body {
         flex-direction: column;
         justify-content: center;
         gap: 50px;
-        font-family: cursive !important;
         .cart-item {
           display: flex;
           align-items: center;

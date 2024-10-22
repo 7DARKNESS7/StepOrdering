@@ -196,7 +196,6 @@ body main section.topSect h1 {
   color: #ffffff;
   z-index: 10;
   font-size: 30px;
-  font-family: cursive;
 }
 body main section.topSect .darkOverlay {
   position: absolute;
@@ -218,7 +217,6 @@ body main section.categories {
   padding: 30px 30px 0 30px;
 }
 body main section.categories h1 {
-  font-family: cursive;
   font-size: 36px;
 }
 body main section.categories .categoriesList {
@@ -436,7 +434,6 @@ body main section.mainContent .productCards .pCard .cardInfo {
   gap: 20px;
   padding: 0 20px;
   width: 100%;
-  font-family: cursive !important;
 }
 body main section.mainContent .productCards .pCard .cardInfo p {
   font-size: 14px;
@@ -486,7 +483,6 @@ body main section.mainContent .productCards .pCard .cardInfo .bottomInfo button 
   height: 42px;
   font-weight: bold;
   color: #000000;
-  font-family: cursive;
 }
 body main section.mainContent .productCards .pCard .cardInfo .bottomInfo button:hover {
   background: url("../images/bt_hoverborder.png");
@@ -555,7 +551,6 @@ body main section.cart {
 }
 body main section.cart h1 {
   font-size: 36px;
-  font-family: cursive;
 }
 body main section.cart .cartProducts {
   width: 100%;
@@ -663,7 +658,6 @@ body main section.cart .cartProd {
   flex-direction: column;
   justify-content: center;
   gap: 50px;
-  font-family: cursive !important;
 }
 body main section.cart .cartProd .cart-item {
   display: flex;
