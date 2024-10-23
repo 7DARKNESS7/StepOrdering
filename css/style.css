@@ -812,7 +812,7 @@ body footer::before {
     display: flex;
     align-items: center;
     gap: 10px;
-    z-index: 9999;
+    z-index: 2000;
   }
   body .mobileMenu a img {
     width: 50px;
@@ -830,7 +830,7 @@ body footer::before {
     align-items: center;
     justify-content: center;
     gap: 6px;
-    z-index: 9999;
+    z-index: 1000;
   }
   body .mobileMenu .burgerBar .burgerLine {
     width: 30px;
@@ -838,7 +838,7 @@ body footer::before {
     background-color: #ffcc00;
     border-radius: 2px;
     transition: 0.5s ease;
-    z-index: 9999;
+    z-index: 1000;
   }
   body .mobileMenu .burgerToggle .burgerLine:nth-child(1) {
     transform: translateY(8.65px) rotate(405deg);
